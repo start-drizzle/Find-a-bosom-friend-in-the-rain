@@ -1,0 +1,43 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist-electron/
+dist-keyboard/
+release/
+build/
+build-keyboard/
+
+# 环境变量
+.env.local
+.env.*.local
+
+# 日志
+*.log
+npm-debug.log*
+
+# 测试覆盖率
+coverage/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# 开发者文档（不要传到远程）
+CLAUDE.md
+
+# YOLO 裁剪测试输出
+test_crops/
+
+# 调试文件
+1.txt
+2.txt
+打包.md
+
+# YOLO test crops
+test_crops/

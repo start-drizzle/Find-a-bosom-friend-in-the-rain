@@ -1,0 +1,89 @@
+{
+  "name": "drizzle-translator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "build:electron": "vite build && node scripts/copy-env.js && electron-builder",
+    "preview": "vite preview",
+    "clean": "rm -rf dist dist-electron",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/\" \"electron/\"",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "build": {
+    "appId": "com.drizzle.app",
+    "productName": "Drizzle Translator",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "dist-electron/.env.local"
+    ],
+    "extraFiles": [
+      {
+        "from": "dist-keyboard/keyboard_input.exe",
+        "to": "keyboard_input.exe"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@jitsi/robotjs": "^0.6.21",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "form-data": "^4.0.0",
+    "globals": "^16.5.0",
+    "koffi": "^2.15.5",
+    "node-fetch": "^3.3.2",
+    "pinia": "^3.0.4",
+    "uiohook-napi": "^1.5.5",
+    "uuid": "^13.0.0",
+    "vue": "^3.5.31",
+    "vue-router": "^5.0.4",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@pinia/testing": "^1.0.3",
+    "@types/node": "^22.19.15",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.18.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
+    "@vue/test-utils": "^2.4.6",
+    "electron": "^41.1.0",
+    "electron-builder": "^26.8.1",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.8.0",
+    "happy-dom": "^20.8.9",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vite-plugin-electron": "^0.29.1",
+    "vite-plugin-electron-renderer": "^0.14.6",
+    "vitest": "^4.1.2",
+    "vue-eslint-parser": "^10.4.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.1.0",
+    "utf-8-validate": "^6.0.6"
+  }
+}

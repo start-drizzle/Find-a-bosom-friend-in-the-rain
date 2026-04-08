@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "./assets/dropdown-animations.css";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #1d5876;
+  --primary-rgb: 29, 88, 118;
+  --color-primary-container: #e0f2fe;
+  --color-on-primary-container: #0c4a6e;
+
+  --color-surface: #f8fafc;
+  --color-surface-container: #ffffff;
+  --color-surface-container-low: #f1f5f9;
+
+  --color-on-surface: #1e293b;
+  --color-on-surface-variant: #64748b;
+
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  select:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+
+.texture-bg {
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(29, 88, 118, 0.03) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(rm -rf dist-electron)",
+      "Bash(npx vite:*)",
+      "Bash(grep -E \"koffi|user32\\\\.dll|void \\\\*|PostMessageW\" F:/zip1/dist-electron/main-*.js)",
+      "WebFetch(domain:minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(python:*)",
+      "Bash(git checkout:*)",
+      "Bash(git reflog:*)",
+      "Bash(npx vue-tsc:*)",
+      "Bash(pyinstaller --clean --noconfirm --distpath dist-keyboard --workpath build/keyboard_input --specpath build/keyboard_input scripts/build_keyboard_exe.spec)",
+      "Bash(pyinstaller --clean --noconfirm --onefile --name keyboard_input --distpath dist-keyboard --workpath build/keyboard_input --hidden-import keyboard --console keyboard_input.py)",
+      "Bash(npx eslint:*)",
+      "Bash(echo \"EXIT: $?\")"
+    ]
+  }
+}
